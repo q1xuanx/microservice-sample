@@ -1,4 +1,12 @@
-# Microservice sample 
-Using microservice architecture, 
-## Technologies used: 
-Java Spring Boot, Eureka for manage service, Spring Cloud, Zipkin, PostgreSQL, Feign Cloud for call api between service
+# 🧩 Microservice Sample
+Using microservice architecture
+
+## 🛠️ Technologies Used
+- **Backend**: Java Spring Boot
+- **Service Management**: Eureka for managing services
+- **Cloud Integration**: Spring Cloud
+- **Distributed Tracing**: Zipkin
+- **Database**: PostgreSQL
+- **API Communication**: Feign Cloud for calling APIs between services
+---
+    This is a template sample intended for educational purposes.
