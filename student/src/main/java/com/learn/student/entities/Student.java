@@ -14,12 +14,12 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class Student {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String firstName;
     private String lastName;
     private String email;
+    private String password;
     private Integer schoolId;
 }

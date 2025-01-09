@@ -1,5 +1,6 @@
 package com.learn.student.controllers;
 
+import com.learn.student.request.LoginRequest;
 import com.learn.student.services.StudentService;
 import com.learn.student.entities.Student;
 import lombok.RequiredArgsConstructor;
@@ -26,5 +27,13 @@ public class StudentController {
     @GetMapping("/find-all-with-id/{id_school}")
     public ResponseEntity<List<Student>> findAllWithId(@PathVariable("id_school") Integer idSchool) {
         return ResponseEntity.ok().body(studentService.findBySchoolId(idSchool));
+    }
+    @PostMapping("/login")
+    public ResponseEntity<Object> login(@RequestBody LoginRequest loginRequest) {
+        String validLogin = studentService.login(loginRequest);
+        if (validLogin != null && validLogin.equals("Ok")) {
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(validLogin);
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(validLogin);
     }
 }

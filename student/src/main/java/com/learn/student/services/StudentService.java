@@ -2,6 +2,7 @@ package com.learn.student.services;
 
 import com.learn.student.entities.Student;
 import com.learn.student.repositories.StudentRepository;
+import com.learn.student.request.LoginRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +22,16 @@ public class StudentService {
 
     public List<Student> findBySchoolId(Integer schoolId){
         return studentRepository.findBySchoolId(schoolId);
+    }
+
+    public String login(LoginRequest login){
+        if (login.getPassword().isEmpty() || login.getEmail().isEmpty()) {
+            return "Missing password or email";
+        }
+        Boolean isExist = studentRepository.existsByEmailAndPassword(login.getEmail(), login.getPassword());
+        if (Boolean.TRUE.equals(isExist)) {
+            return "Ok";
+        }
+        return "Wrong email or password";
     }
 }

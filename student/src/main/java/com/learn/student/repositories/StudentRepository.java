@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
     List<Student> findBySchoolId(Integer schoolId);
+    Boolean existsByEmailAndPassword(String email, String password);
 }
