@@ -24,9 +24,3 @@ management:
   tracing:
     sampling:
       probability: 1.0
-okta:
-  oauth2:
-    issuer:  https://dev-pzn0oc0dwqzld0pp.us.auth0.com/
-    client-id: VNegDZfcjaI7pmryooFDSWtGI1hMiqCI
-    client-secret: M0JcIUM00UhzasThu7x5Tw8HNK-SXziz23vRRzp0q7QoIVOC48FzC_mpdpoHejKE
-    audience: ${okta.oauth2.issuer}api/v2

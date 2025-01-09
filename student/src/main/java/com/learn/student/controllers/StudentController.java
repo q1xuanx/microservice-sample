@@ -4,6 +4,8 @@ import com.learn.student.request.LoginRequest;
 import com.learn.student.services.StudentService;
 import com.learn.student.entities.Student;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StudentController {
     private final StudentService studentService;
+    private Logger log = LoggerFactory.getLogger(StudentController.class);
     @PostMapping
     public ResponseEntity<Object> save(@RequestBody Student student) {
         studentService.saveStudent(student);
